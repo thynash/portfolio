@@ -1,18 +1,18 @@
 import React from "react";
-import { HeroSection } from "./components/Herosection";
+import { HeroSection } from "./components/Herosections";
 import { AboutSection } from "./components/AboutSection";
-import { ExperienceEducation } from "./components/ExperienceEducation";
-import { ProjectsSection } from "./components/ProjectsSection";
+import { ExperienceSection } from "./components/Experience";
+import { ProjectsSection } from "./components/ProjectSection";
 import { SkillsSection } from "./components/SkillsSection";
 import { AchievementsSection } from "./components/AchievementsSection";
-import { FooterSection } from "./components/FooterSection";
+import { FooterSection } from "./components/Footer";
 
 function App() {
   return (
     <main className="bg-black text-white scroll-smooth">
       <HeroSection />
       <AboutSection />
-      <ExperienceEducation />
+      <ExperienceSection />
       <ProjectsSection />
       <SkillsSection />
       <AchievementsSection />

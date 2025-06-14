@@ -2,7 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import {
   SiPython, SiCplusplus, SiC, SiR, SiRust, SiPowershell,
-  SiPowerbi, SiTensorflow, SiNumpy, SiScikitlearn, SiPandas,
+  SiTensorflow, SiNumpy, SiScikitlearn, SiPandas,
   SiFramer, SiReact, SiMicrosoftazure, SiTailwindcss
 } from "react-icons/si";
 
@@ -12,7 +12,6 @@ const skills = [
   { name: "C", icon: <SiC /> },
   { name: "R", icon: <SiR /> },
   { name: "Rust", icon: <SiRust /> },
-  { name: "Power BI", icon: <SiPowerbi /> },
   { name: "System Design", icon: <SiMicrosoftazure /> },
   { name: "DSA", icon: <SiNumpy /> },
   { name: "AI", icon: <SiTensorflow /> },
