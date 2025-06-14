@@ -1,65 +1,51 @@
 import React from "react";
 import { motion } from "framer-motion";
 import {
-  SiPowerbi,
-  SiPython,
-  SiR,
-  SiRust,
-  SiC,
-  SiCplusplus,
-  SiNumpy,
-  SiTensorflow,
-  SiScikitlearn,
-  SiMicrosoft,
-  SiReact
+  SiPython, SiCplusplus, SiC, SiR, SiRust, SiPowershell,
+  SiPowerbi, SiTensorflow, SiNumpy, SiScikitlearn, SiPandas,
+  SiFramer, SiReact, SiMicrosoftazure, SiTailwindcss
 } from "react-icons/si";
-import { FaBrain } from "react-icons/fa";
-import { TbTopologyStar3 } from "react-icons/tb";
 
 const skills = [
-  { name: "Power BI", icon: <SiPowerbi size={32} className="text-yellow-400" /> },
-  { name: "Python", icon: <SiPython size={32} className="text-blue-400" /> },
-  { name: "R", icon: <SiR size={32} className="text-indigo-400" /> },
-  { name: "Rust", icon: <SiRust size={32} className="text-orange-500" /> },
-  { name: "C", icon: <SiC size={32} className="text-sky-400" /> },
-  { name: "C++", icon: <SiCplusplus size={32} className="text-blue-500" /> },
-  { name: "System Design", icon: <TbTopologyStar3 size={32} className="text-cyan-400" /> },
-  { name: "Data Structures & Algorithms", icon: <SiReact size={32} className="text-purple-400" /> },
-  { name: "AI", icon: <FaBrain size={32} className="text-pink-500" /> },
-  { name: "ML", icon: <SiScikitlearn size={32} className="text-yellow-300" /> },
-  { name: "DL / NLP", icon: <SiTensorflow size={32} className="text-orange-400" /> },
-  { name: "Statistics", icon: <SiNumpy size={32} className="text-teal-300" /> }
+  { name: "Python", icon: <SiPython /> },
+  { name: "C++", icon: <SiCplusplus /> },
+  { name: "C", icon: <SiC /> },
+  { name: "R", icon: <SiR /> },
+  { name: "Rust", icon: <SiRust /> },
+  { name: "Power BI", icon: <SiPowerbi /> },
+  { name: "System Design", icon: <SiMicrosoftazure /> },
+  { name: "DSA", icon: <SiNumpy /> },
+  { name: "AI", icon: <SiTensorflow /> },
+  { name: "ML", icon: <SiScikitlearn /> },
+  { name: "DL / NLP", icon: <SiPandas /> },
+  { name: "Statistics", icon: <SiFramer /> },
+  { name: "React", icon: <SiReact /> },
+  { name: "TailwindCSS", icon: <SiTailwindcss /> },
 ];
 
 export const SkillsSection = () => {
   return (
-    <section className="py-20 px-6 md:px-20 bg-black">
-      <motion.div
-        initial={{ opacity: 0, y: 40 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
-        viewport={{ once: true }}
-        className="max-w-6xl mx-auto"
-      >
-        <h2 className="text-4xl font-bold text-cyan-400 mb-10 text-center">Skills</h2>
-
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
+    <section className="bg-zinc-950 text-white py-24 px-6 md:px-20">
+      <div className="max-w-6xl mx-auto text-center">
+        <h2 className="text-4xl font-bold text-cyan-400 mb-12">
+          Skills & Tools
+        </h2>
+        <div className="grid grid-cols-3 md:grid-cols-5 gap-8 justify-items-center">
           {skills.map((skill, index) => (
             <motion.div
               key={index}
               initial={{ opacity: 0, scale: 0.9 }}
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.4, delay: index * 0.05 }}
-              className="flex flex-col items-center bg-gray-900 p-4 rounded-2xl border border-gray-700 hover:border-cyan-400 transition"
+              viewport={{ once: true }}
+              className="flex flex-col items-center bg-zinc-900 rounded-xl p-4 shadow hover:shadow-cyan-400/40 transition-all border border-gray-800 hover:border-cyan-400"
             >
-              {skill.icon}
-              <p className="mt-2 text-white text-sm font-medium text-center">
-                {skill.name}
-              </p>
+              <div className="text-3xl mb-2 text-cyan-300">{skill.icon}</div>
+              <p className="text-sm text-gray-300">{skill.name}</p>
             </motion.div>
           ))}
         </div>
-      </motion.div>
+      </div>
     </section>
   );
 };
