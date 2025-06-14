@@ -1,29 +1,46 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { Typewriter } from "react-simple-typewriter";
+import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
 
 export const HeroSection = () => {
   return (
-    <section className="min-h-screen flex items-center justify-center bg-black relative overflow-hidden">
+    <section className="relative bg-black text-white py-32 px-6 md:px-20 overflow-hidden">
       <motion.div
-        initial={{ opacity: 0, y: 40 }}
+        initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1.2 }}
-        className="text-center px-4"
+        transition={{ duration: 1 }}
+        className="max-w-6xl mx-auto text-center z-10 relative"
       >
-        <h1 className="text-5xl md:text-7xl font-bold text-white drop-shadow-neon">
-          Hey, I'm <span className="text-cyan-400">Nityansh Pant</span>
+        <h1 className="text-5xl md:text-6xl font-bold leading-tight mb-4">
+          Hi, I'm <span className="text-cyan-400">Nityansh Pant</span>
         </h1>
-        <p className="mt-4 text-xl md:text-2xl text-gray-300">
-          coding is my way of understanding world.
-        </p>
-        <button className="mt-8 px-6 py-3 bg-cyan-500 text-black font-semibold rounded-xl shadow-xl hover:bg-cyan-400 transition">
-          View Projects
-        </button>
+        <h2 className="text-xl md:text-2xl text-gray-300">
+          <Typewriter
+            words={["AI Engineer", "ML Developer", "NLP Enthusiast", "System Designer"]}
+            loop={true}
+            cursor
+            cursorStyle="|"
+            typeSpeed={80}
+            deleteSpeed={50}
+            delaySpeed={1500}
+          />
+        </h2>
+        <div className="mt-6 flex justify-center space-x-6">
+          <a href="https://github.com/thynash" target="_blank" rel="noopener noreferrer">
+            <FaGithub className="text-2xl hover:text-cyan-400 transition" />
+          </a>
+          <a href="https://linkedin.com/in/thynash" target="_blank" rel="noopener noreferrer">
+            <FaLinkedin className="text-2xl hover:text-cyan-400 transition" />
+          </a>
+          <a href="https://twitter.com/thynash" target="_blank" rel="noopener noreferrer">
+            <FaTwitter className="text-2xl hover:text-cyan-400 transition" />
+          </a>
+        </div>
       </motion.div>
 
-      {/* Glowing Background Circles */}
-      <div className="absolute -z-10 w-[400px] h-[400px] bg-cyan-500 blur-[120px] opacity-30 top-10 left-10 rounded-full" />
-      <div className="absolute -z-10 w-[300px] h-[300px] bg-purple-500 blur-[100px] opacity-20 bottom-10 right-10 rounded-full" />
+      {/* Gradient and glow background */}
+      <div className="absolute inset-0 bg-gradient-to-br from-cyan-900/20 to-indigo-800/10 rounded-full blur-3xl -z-10"></div>
     </section>
   );
 };
