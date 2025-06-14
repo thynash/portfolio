@@ -3,58 +3,62 @@ import { motion } from "framer-motion";
 
 const projects = [
   {
-    title: "News-Sentiment-Analyzer",
-    description:
-      "Built a real-time dashboard to analyze news sentiment using NLP and live data streaming via FastAPI."
+    title: "News Sentiment Analyzer",
+    description: "Built a real-time dashboard to analyze news sentiment using NLP and live data streaming via FastAPI.",
+    tech: ["FastAPI", "NLP", "React"],
   },
   {
     title: "Orion",
-    description:
-      "Trained and compared multiple ML models to classify asteroids based on real astronomical data."
+    description: "Compared multiple ML models to classify asteroids and identify the best-performing classifier.",
+    tech: ["Scikit-learn", "Pandas", "Matplotlib"],
   },
   {
     title: "Quantum Sentinel",
-    description:
-      "Developed a Quantum-Assisted Machine Learning model for detecting fraudulent credit card transactions."
+    description: "Quantum-assisted ML model to detect fraudulent credit card transactions.",
+    tech: ["Qiskit", "Quantum ML", "Sklearn"],
   },
   {
     title: "EDA on Udemy Dataset",
-    description:
-      "Performed exploratory data analysis on Udemy courses to extract insights on pricing, popularity, and subject areas."
-  }
+    description: "Performed deep EDA to extract patterns in pricing, popularity, and subject areas.",
+    tech: ["Python", "Seaborn", "Plotly"],
+  },
 ];
 
 export const ProjectsSection = () => {
   return (
-    <section className="py-20 px-6 md:px-20 bg-black">
-      <motion.div
-        initial={{ opacity: 0, y: 40 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
-        viewport={{ once: true }}
-        className="max-w-6xl mx-auto"
-      >
-        <h2 className="text-4xl font-bold text-cyan-400 mb-10 text-center">
+    <section className="bg-black text-white py-24 px-6 md:px-20">
+      <div className="max-w-6xl mx-auto">
+        <h2 className="text-4xl font-bold text-cyan-400 mb-12 text-center">
           Projects
         </h2>
-
-        <div className="grid md:grid-cols-2 gap-10">
-          {projects.map((project, idx) => (
+        <div className="grid gap-10 md:grid-cols-2">
+          {projects.map((project, index) => (
             <motion.div
-              key={idx}
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.6, delay: idx * 0.1 }}
-              className="bg-gray-900 rounded-2xl p-6 border border-gray-700 hover:border-cyan-400 shadow-xl transition"
+              key={index}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: index * 0.2 }}
+              viewport={{ once: true }}
+              className="bg-zinc-900 p-6 rounded-2xl shadow-lg border border-gray-800 hover:border-cyan-400 transition"
             >
-              <h3 className="text-xl font-semibold text-white mb-2">
+              <h3 className="text-2xl font-semibold mb-2 text-white">
                 {project.title}
               </h3>
-              <p className="text-gray-300 text-sm">{project.description}</p>
+              <p className="text-gray-400 mb-3">{project.description}</p>
+              <div className="flex flex-wrap gap-2">
+                {project.tech.map((tech, idx) => (
+                  <span
+                    key={idx}
+                    className="text-sm px-3 py-1 bg-cyan-800/30 text-cyan-300 rounded-full"
+                  >
+                    {tech}
+                  </span>
+                ))}
+              </div>
             </motion.div>
           ))}
         </div>
-      </motion.div>
+      </div>
     </section>
   );
 };
